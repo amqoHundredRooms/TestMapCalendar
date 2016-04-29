@@ -5,6 +5,6 @@
  */
 
 import React, { AppRegistry } from 'react-native';
-import App from './src/components/app';
+import Main from './src/main';
 
-AppRegistry.registerComponent('MapTest', () => App);
+AppRegistry.registerComponent('MapTest', () => Main);

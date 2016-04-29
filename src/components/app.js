@@ -9,6 +9,8 @@ import React, {
 import Dimensions from 'Dimensions';
 import MapView from 'react-native-maps';
 
+import Button from './common/button';
+
 const REGION_LOAD = {
   longitudeDelta: 0.21173257380723953,
   latitudeDelta: 0.2327080490821487,
@@ -16,7 +18,7 @@ const REGION_LOAD = {
   latitude: 41.37246834429643
 }
 
-export default class App extends Component {
+class App extends Component {
 
   constructor(props) {
     super(props);
@@ -50,14 +52,23 @@ export default class App extends Component {
     });
   }
 
+  handleGoCalendar() {
+    this.props.navigator.push({
+      name: 'calendar'
+    });
+  }
+
   render() {
     return (
       <View style={ styles.container }>
-        <Text
+        <View
           onLayout={ (event) => this.updateMapHeight(event) }
-          style={ styles.welcome }>
-          React Native Maps on Android!
-        </Text>
+          style={ styles.header }>
+          <Text style={ styles.welcome }>
+            Maps on Android!
+          </Text>
+          <Button text='Go Calendar' onPress={ this.handleGoCalendar.bind(this) } />
+        </View>
         <MapView
           initialRegion= { REGION_LOAD }
           region={ this.state.region }
@@ -90,7 +101,15 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: 'center',
+    marginRight: 20
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 10,
     padding: 20,
   }
 });
+
+module.exports = App;
