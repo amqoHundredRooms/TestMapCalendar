@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "133847784988",
+    "project_id": "udemy-curso-react"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133847784988:android:8f05f55a1b1e3ece",
+        "android_client_info": {
+          "package_name": "com.maptest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133847784988-a4udoddkps5i29ci3893ktf2o5hckj3l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maptest",
+            "certificate_hash": "6DF56E68C5C1524E38F6AC8D6A41509D8E7B3BD3"
+          }
+        },
+        {
+          "client_id": "133847784988-dlj1b38spu5v9995q2e1rulhfcilhs5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQHaR7deRxz21Oci9XdF84twa7CLeZKXs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

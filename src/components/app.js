@@ -22,7 +22,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state= {
+    this.state = {
       titleHeight: 0,
       region: REGION_LOAD
     }
@@ -58,16 +58,20 @@ class App extends Component {
     });
   }
 
+  handleLogin() {
+    this.props.navigator.push({
+      name: 'login'
+    });
+  }
+
   render() {
     return (
       <View style={ styles.container }>
         <View
           onLayout={ (event) => this.updateMapHeight(event) }
           style={ styles.header }>
-          <Text style={ styles.welcome }>
-            Maps on Android!
-          </Text>
           <Button text='Go Calendar' onPress={ this.handleGoCalendar.bind(this) } />
+          <Button text='Login' onPress={ this.handleLogin.bind(this) } />
         </View>
         <MapView
           initialRegion= { REGION_LOAD }
@@ -107,8 +111,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 10,
-    padding: 20,
+    padding: 10,
   }
 });
 

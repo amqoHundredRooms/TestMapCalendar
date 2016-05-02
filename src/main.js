@@ -2,10 +2,12 @@ import React, { View, Navigator, StyleSheet, Component } from 'react-native';
 
 import DayPicker from './components/calendar';
 import App from './components/app';
+import Login from './components/login'
 
 var ROUTES = {
   calendar: DayPicker,
-  app: App
+  app: App,
+  login: Login
 };
 
 class Main extends Component {
@@ -16,7 +18,6 @@ class Main extends Component {
         <Navigator
           initialRoute={{ name: 'app' }}
           renderScene={ this.renderScene }
-          onDidFocus={ (info) => { console.log('ON DID FOCUS', info) } }
           configureScene={() => {
             return Navigator.SceneConfigs.FadeAndroid;
           }} />

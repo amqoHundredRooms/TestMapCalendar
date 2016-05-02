@@ -2,9 +2,13 @@ import React, { Component, Text, StyleSheet, TouchableHighlight } from 'react-na
 
 class Button extends Component {
   render() {
+    var buttonStyle = styles.button;
+    if (this.props.addStyle) {
+      buttonStyle = StyleSheet.flatten([styles.button, this.props.addStyle]);
+    }
     return (
       <TouchableHighlight
-        style={ styles.button }
+        style={ buttonStyle }
         underlayColor={ 'gray' }
         onPress={ this.props.onPress } >
         <Text style={ styles.buttonText }>{ this.props.text }</Text>
@@ -21,7 +25,7 @@ var styles = StyleSheet.create({
     borderRadius: 5,
     padding: 5,
     borderColor: 'black',
-    marginTop: 10
+    margin: 10
   },
   buttonText: {
     flex: 1,
