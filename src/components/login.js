@@ -28,12 +28,12 @@ class Login extends Component {
     console.log('CURRENT USER', currentUser);
 
     this.setState({
-      user: currentUser
+      user: currentUser == {} ? null : currentUser
     });
 
     GoogleSignin.configure({
       // scopes: ["https://www.googleapis.com/auth/drive.readonly"], // what API you want to access on behalf of the user, default is email and profile
-      // // iosClientId: <FROM DEVELOPPER CONSOLE>, // only for iOS
+      iosClientId: '133847784988-urktlj236ipn2tdqhto46bp82cp95t5i.apps.googleusercontent.com', // only for iOS
       webClientId: '133847784988-dlj1b38spu5v9995q2e1rulhfcilhs5i.apps.googleusercontent.com',
       offlineAccess: false // Depending on this we will get idToken or serverAuthCode
       // Check https://github.com/apptailor/react-native-google-signin
@@ -85,8 +85,8 @@ class Login extends Component {
     return (
       <GoogleSigninButton
         style={ styles.google }
-        size={ GoogleSigninButton.Size.Icon }
-        color={ GoogleSigninButton.Color.Dark }
+        size={ GoogleSigninButton.Size.Standard }
+        color={ GoogleSigninButton.Color.Light }
         onPress={
           this.onHandleGoogleSignIn.bind(this)
         }/>
